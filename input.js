@@ -38,6 +38,37 @@ window.addEventListener("keydown" , (e)=>{
     }
 })
 
+//events من عندي
+
+
+
+let btns = document.querySelectorAll(".btn")
+btns.forEach((e)=>{
+    e.addEventListener("click",()=>{
+        switch(e.textContent){
+            case "Up":
+                if(lastInputDitrection.y !== 0 ) break;
+                inputDirection = {x : 0 , y : -1}
+                break;
+            case "Down":
+                if(lastInputDitrection.y !== 0 ) break;
+                inputDirection = {x : 0 , y : 1}
+                break;
+            case "Left":
+                if(lastInputDitrection.x !== 0 ) break;
+                inputDirection = {x : -1 , y : 0}
+                break;
+            case "Right":
+                if(lastInputDitrection.x !== 0 ) break;
+                inputDirection = {x : 1 , y : 0}
+                break;
+        
+            default:
+                break;
+        }
+    })
+})
+
 //في هذه الداله احنا محتاجين نعمل ريتيرن الانبوت بتاع اليوزر اللي دخله
 export function getInputdirction(){
     lastInputDitrection  = inputDirection;
